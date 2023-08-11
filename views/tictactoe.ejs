@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/my_style.css">
+    <title>Lynn's Tic-Tac-Toe Game</title>
+
+    <style type="text/css">
+        p {
+            color: purple;
+            font-size: 25px;
+            /*background-color: black;*/
+            border: 5px solid purple;
+            }
+
+      .svg-wrapper {
+        background-color: #F0F8FF;
+        width: 500px;
+        margin: auto;
+      }
+
+    </style>
+</head>
+<body>
+
+  <center><p id = "heading">Play Tic Tac Toe! X goes first - O goes second. </p></center>
+  <div class="svg-wrapper">
+    <svg id="gameBoard" viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
+      <rect id="r0" width="30" height="30" style="fill-opacity: 0;" />
+      <rect id="r1" width="30" height="30" style="fill-opacity: 0;" transform="translate(30,0)" />
+      <rect id="r2" width="30" height="30" style="fill-opacity: 0;" transform="translate(60,0)" />
+      <rect id="r3" width="30" height="30" style="fill-opacity: 0;" transform="translate(0,30)" />
+      <rect id="r4" width="30" height="30" style="fill-opacity: 0;" transform="translate(30,30)" />
+      <rect id="r5" width="30" height="30" style="fill-opacity: 0;" transform="translate(60,30)" />
+      <rect id="r6" width="30" height="30" style="fill-opacity: 0;" transform="translate(0,60)" />
+      <rect id="r7" width="30" height="30" style="fill-opacity: 0;" transform="translate(30,60)" />
+      <rect id="r8" width="30" height="30" style="fill-opacity: 0;" transform="translate(60,60)" />
+
+    </svg>
+  </div>
+
+  <script>
+
+    let gameBoard = document.querySelector('#gameBoard')
+    gameBoard.addEventListener('click', gameClick )
+
+    function gameClick(ev) {
+        console.log(playTurn(ev.target.id[1]))
+    }
+
+    let board = ["-","-","-","-","-","-","-","-","-"]
+
+    function playTurn(x) {
+      round = round+1
+      printPlayer(round)
+      if (round % 2 == 1){
+        player = "X"
+        if(board[x] != "-"){
+            var header = document.getElementById("heading")
+            header.innerHTML = "That spot is already taken! Please pick another: "
+            round = round-1
+        }
+        if (board[x] == "-"){
+              board[x] = "X"
+        }
+      }  
+      else{
+        player = "O"
+        if(board[x] != "-"){
+            var header = document.getElementById("heading")
+            header.innerHTML = "That spot is already taken! Please pick another: "
+            round = round-1
+        }
+        if (board[x] == "-"){
+              board[x] = "O"
+        }
+      }
+      update()
+      return board
+    }
+    
+    function printPlayer(round) {
+      if (round % 2 == 1){
+        //console.log("X has played!")
+        var header = document.getElementById("heading")
+        header.innerHTML = "X has played! O's turn: "
+      }
+      else{
+        //console.log("O has played!")
+        var header = document.getElementById("heading")
+        header.innerHTML = "O has played! X's turn: "
+      }
+    }
+    
+    function checkWin(board, player){
+      if ((board[0] == player && board[1] == player && board[2] == player) || (board[3] == player && board[4] == player && board[5] == player) || (board[6] == player && board[7] == player && board[8] == player))
+      {
+        return true
+      }
+      if ((board[0] == player && board[3] == player && board[6] == player) || (board[1] == player && board[4] == player && board[7] == player) || (board[2] == player && board[5] == player && board[8] == player))
+      {
+        return true
+      }
+       if ((board[0] == player && board[4] == player && board[8] == player) || (board[2] == player && board[4] == player && board[6] == player))
+      {
+        return true
+      }
+    }
+
+    function update(){
+        for (let i = 0; i < board.length; i++) {
+            if (board[i] == "X"){
+                position = spacesX[i]
+                var x1 = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                x1.setAttribute("x1", ""+position[0]);
+                x1.setAttribute("y1", ""+position[1]);
+                x1.setAttribute("x2", ""+position[2]);
+                x1.setAttribute("y2", ""+position[3]);
+                x1.setAttribute("stroke", "red");
+                var x2 = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                x2.setAttribute("x1", ""+position[4]);
+                x2.setAttribute("y1", ""+position[5]);
+                x2.setAttribute("x2", ""+position[6]);
+                x2.setAttribute("y2", ""+position[7]);
+                x2.setAttribute("stroke", "red");
+                board_display = document.querySelector('svg')
+                board_display.appendChild(x1)
+                board_display.appendChild(x2)
+            }
+            else if (board[i] == "O"){
+                position = spacesO[i]
+                var circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                circle.setAttribute("cx", ""+position[0]);
+                circle.setAttribute("cy", ""+position[1]);
+                circle.setAttribute("r", "13");
+                circle.setAttribute("stroke", "blue");
+                circle.setAttribute("fill", "none");
+                board_display = document.querySelector('svg')
+                board_display.appendChild(circle)
+            }
+          }
+          if (checkWin(board, player) == true){
+            console.log(board)
+            console.log("PLAYER " + player + " WINS!")
+            var header = document.getElementById("heading")
+            header.innerHTML = "PLAYER " + player + " WINS! Click Reload to play again. "
+            board = ["-","-","-","-","-","-","-","-","-"]
+            /*for (let i = 0; i < board.length; i++) {
+                var board_space = document.querySelector(`#r${i}`)
+                board_space.style.fill = 'gray'
+              }*/
+          }
+          if(board.includes("-") == false){
+                console.log("Tie! Click Reload to play again.")
+                var header = document.getElementById("heading")
+                header.innerHTML = "Tie! Click Reload to play again."
+                board = ["-","-","-","-","-","-","-","-","-"]
+          }
+    }
+    var round = 0
+    spacesO = {0: [15, 15],
+        1: [45, 15],
+        2: [75, 15],
+        3: [15, 45],
+        4: [45, 45],
+        5: [75, 45],
+        6: [15, 75],
+        7: [45, 75],
+        8: [75, 75],
+    }
+    spacesX = {0: [0, 0, 30, 30, 30, 0, 0, 30],
+        1: [30, 0, 60, 30, 60, 0, 30, 30],
+        2: [60, 0, 90, 30, 90, 0, 60, 30],
+        3: [0, 30, 30, 60, 30, 30, 0, 60],
+        4: [30, 30, 60, 60, 60, 30, 30, 60],
+        5: [60, 30, 90, 60, 90, 30, 60, 60],
+        6: [0, 60, 30, 90, 30, 60, 0, 90],
+        7: [30, 60, 60, 90, 60, 60, 30, 90],
+        8: [60, 60, 90, 90, 90, 60, 60, 90],
+    }
+    
+  </script>
+    
+    <br>
+    <center><A href = "./"> Back To Homepage </A></center>
+        
+</body>
+</html>

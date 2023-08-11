@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/my_style.css">
+    <title>MadLibs Form</title>
+</head>
+<body>
+    <h1> Read Your MadLibs! </h1>
+    <%   if( has_result == true ) {   %>
+        <center>
+            <%   if( picture == "School") {   %>
+            <img src="/2023ltao/img/school.png" alt="School Picture" width="250" height="275">
+            <%    } else if( picture == "Playground" ) {                %>
+            <img src="/2023ltao/img/playground.png" alt="School Picture" width="375" height="325">
+            <%    } else {                %>
+            <img src="/2023ltao/img/friends.png" alt="School Picture" width="250" height="275">
+            <%    }                       %>
+        </center>
+        <p> It was <b><%= food %></b> Day at school, and <b><%= name %></b> was feeling super <b><%= adjective %></b> and ready for lunch. But when <b><%= name %></b> and her friends went outside to eat, a <b><%= noun1 %></b> suddenly swooped in and stole her <b><%= food %></b>! </p>
+        <p> Enraged, <b><%= name %></b> chased the <b><%= noun1 %></b> all over the school campus. She <b><%= verb1 %></b> under desks, <b><%= verb2 %></b> through hallways, and <b><%= verb3 %></b> over the playground. </p>
+        <p> After a <b><%= number %></b>-minute chase, just when she'd caught up with the <b><%= noun1 %></b>, she tripped on her <b><%= noun2 %></b> and the <b><%= noun1 %></b> escaped with her <b><%= food %></b>! Luckily, <b><%= name %></b>’s friends were willing to share their <b><%= food2 %></b>.</p>
+       
+    <%    } else {                %>
+    <p>Uh oh! Please fill out all fields and check the box in order to generate a MadLibs!</p>
+    <%    }                       %>
+</body>
+</html>

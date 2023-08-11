@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/my_style.css">
+    <title>Coin Flip</title>
+</head>
+<body>
+    <h1> 
+        <%   if( flip_result==true) {   %>
+
+    Yay! You won the coin toss!
+
+    <%    } else {                %>
+
+    Oh no! You lost the coin toss!
+
+    <%    }                       %>
+    
+    </h1>
+    
+    <p> Number of Wins Recorded: <%= wins %> </p>
+    
+    <br>
+    <p id="homepagelink" style="position: fixed; bottom: 0; width:100%; text-align: center"> <A href = "./"> Back To Homepage </A> </p>
+        
+</body>
+</html>

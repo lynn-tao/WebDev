@@ -1,0 +1,99 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Voting Results</title>
+    <link rel="stylesheet" type="text/css" href="/2023ltao/css/my_style.css">
+    <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 80%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style>
+</head>
+<body>
+    <h1>Fun Fruit Voting Page</h1>
+    
+    <center>
+        
+    <table>
+      <tr>
+        <th>Fruit</th>
+        <th>Votes</th>
+        <th>Store</th>
+        <th>Customers</th>
+      </tr>
+      <tr>
+        <td><%= results[0].fruit_name %></td>
+        <td><%= results[0].votes %></td>
+        <td><%= results[0].store_name %></td>
+        <td><%= results[0].customers %></td>
+      </tr>
+      <tr>
+        <td><%= results[1].fruit_name %></td>
+        <td><%= results[1].votes %></td>
+        <td><%= results[1].store_name %></td>
+        <td><%= results[1].customers %></td>
+      </tr>
+      <tr>
+        <td><%= results[2].fruit_name %></td>
+        <td><%= results[2].votes %></td>
+        <td><%= results[2].store_name %></td>
+        <td><%= results[2].customers %></td>
+      </tr>
+      <tr>
+        <td><%= results[3].fruit_name %></td>
+        <td><%= results[3].votes %></td>
+        <td><%= results[3].store_name %></td>
+        <td><%= results[3].customers %></td>
+      </tr>
+      <tr>
+        <td><%= results[4].fruit_name %></td>
+        <td><%= results[4].votes %></td>
+        <td><%= results[4].store_name %></td>
+        <td><%= results[4].customers %></td>
+      </tr>
+      <tr>
+        <td><%= results[5].fruit_name %></td>
+        <td><%= results[5].votes %></td>
+        <td><%= results[5].store_name %></td>
+        <td><%= results[5].customers %></td>
+      </tr>
+      <tr>
+        <td><%= results[6].fruit_name %></td>
+        <td><%= results[6].votes %></td>
+        <td><%= results[6].store_name %></td>
+        <td><%= results[6].customers %></td>
+      </tr>
+      <tr>
+        <td><%= results[7].fruit_name %></td>
+        <td><%= results[7].votes %></td>
+        <td><%= results[7].store_name %></td>
+        <td><%= results[7].customers %></td>
+      </tr>
+      <tr>
+        <td><%= results[8].fruit_name %></td>
+        <td><%= results[8].votes %></td>
+        <td><%= results[8].store_name %></td>
+        <td><%= results[8].customers %></td>
+      </tr>
+    </table>
+    
+    </center>
+   
+ 
+</body>
+</html>

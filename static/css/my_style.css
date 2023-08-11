@@ -1,0 +1,40 @@
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: navy;
+  text-align: center;
+  font-size: 30px;
+}
+
+h2 {
+  color: navy;
+  text-align: center;
+  font-size: 25px;
+}
+
+p{
+   color: black;
+   font-size: 25px;
+   text-align: center;
+}
+
+#homepagelink {
+  font-size: 16px;
+}
+
+b{
+    color: darkblue;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

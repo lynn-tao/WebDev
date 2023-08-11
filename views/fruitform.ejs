@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Form</title>
+    <link rel="stylesheet" type="text/css" href="css/my_style.css">
+</head>
+<body>
+    <center>
+    <h1>Upvote and Downvote Fruits! </h1>
+    <p> The rules have now changed... you can only cast your votes five times. You've voted <%= visits %> time(s). You have <%= 5-visits %> votes left. </p>
+    <p>
+    <form action = "fruitvoteresults">
+        Watermelon 
+        <input name="upvote" type="checkbox" value="Watermelon">Upvote
+        <input name="downvote" type="checkbox" value="Watermelon">Downvote
+        <br>
+        Mango 
+        <input name="upvote" type="checkbox" value="Mango">Upvote
+        <input name="downvote" type="checkbox" value="Mango">Downvote
+        <br>
+        Kiwi 
+        <input name="upvote" type="checkbox" value="Kiwi">Upvote
+        <input name="downvote" type="checkbox" value="Kiwi">Downvote
+        <br>
+        Apple 
+        <input name="upvote" type="checkbox" value="Apple">Upvote
+        <input name="downvote" type="checkbox" value="Apple">Downvote
+        <br>
+        Orange 
+        <input name="upvote" type="checkbox" value="Orange">Upvote
+        <input name="downvote" type="checkbox" value="Orange">Downvote
+        <br>
+        Grape 
+        <input name="upvote" type="checkbox" value="Grape">Upvote
+        <input name="downvote" type="checkbox" value="Grape">Downvote
+        <br>
+        Pomegranate 
+        <input name="upvote" type="checkbox" value="Pomegranate">Upvote
+        <input name="downvote" type="checkbox" value="Pomegranate">Downvote
+        <br>
+        Strawberry 
+        <input name="upvote" type="checkbox" value="Strawberry">Upvote
+        <input name="downvote" type="checkbox" value="Strawberry">Downvote
+        <br>
+        Blueberry 
+        <input name="upvote" type="checkbox" value="Blueberry">Upvote
+        <input name="downvote" type="checkbox" value="Blueberry">Downvote
+        <br>
+        <br>
+        <input type="submit" value="View Voting Results!"><br>
+    </form>
+    </p>
+    
+      <h3>Oh, sorry, did you sneeze? Goodness Bless! </h3>
+      <p id='blessings'>Blessings: </p>
+      <button type="button" onclick="doTheFetch()">GET BLESSED</button>
+    
+      <script>
+        async function doTheFetch() {
+            const response = await fetch('https://user.tjhsst.edu/2023ltao/blessings')
+            const data = await response.json()
+            let counter_span = document.getElementById('blessings')
+            counter_span.innerHTML = data.blessings;
+        }    
+      </script>
+  
+    <p id="homepagelink" style="position: fixed; bottom: 0; width:100%; text-align: center"> <A href = "./"> Back To Homepage </A> </p>
+</center>
+</body>
+</html>

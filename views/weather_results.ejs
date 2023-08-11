@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Results</title>
+    <link rel="stylesheet" type="text/css" href="css/my_style.css">
+</head>
+<body>
+    <h1>Weather Forecasts in <%= city %>, <%= state %> </h1>
+    <div class="row">
+      <div class="column">
+          <h2>Today's Forecast</h2>
+          <p> <%= today_forecast.detailedForecast %> </p>
+      </div>
+      <div class="column">
+          <h2>Tonight's Forecast</h2>
+          <p> <%= tonight_forecast.detailedForecast %> </p>
+      </div>
+      <div class="column">
+          <h2>Tomorrow's Forecast</h2>
+          <p> <%= tomorrow_forecast.detailedForecast %> </p>
+      </div>
+    </div>
+</body>
+</html>

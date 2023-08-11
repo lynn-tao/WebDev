@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/my_style.css">
+    <title>MadLibs Form</title>
+</head>
+<body>
+  <h1> Lynn's MadLibs: Fill In the Blanks!</h1>
+  <div>
+    <form action="madlibsresult" method='POST'>
+    <ul>
+    <center>
+      <ul>Choose a Picture: <input name="picture" type="radio" value="School">School
+      <input name="picture" type="radio" value="Playground">Playground 
+      <input name="picture" type="radio" value="Friends">Friends 
+      </ul>
+      <br>
+      <ul>Food: <input type="text" name="food"></ul>
+      <br>
+      <ul>Name: <input type="text" name="name"></ul>
+      <br>
+      <ul>Adjective: <input type="text" name="adjective"></ul>
+      <br>
+      <ul>Animal: <input type="text" name="noun1"></ul>
+      <br>
+      <ul>Verb 1 (Past Tense): <input type="text" name="verb1"></ul>
+      <br>
+      <ul>Verb 2 (Past Tense): <input type="text" name="verb2"></ul>
+      <br>
+      <ul>Verb 3 (Past Tense): <input type="text" name="verb3"></ul>
+      <br>
+      <ul>Number: <input type="number" name="mins"></ul>
+      <br>
+      <ul>Object: <input type="text" name="noun2"></ul>
+      <br>
+      <ul>Another Food: <input type="text" name="food2"></ul>
+      <br>
+      <ul>Moment of Truth: Have you filled out the entire form? <input type="checkbox" name="check" value="yes"></ul>
+      <!--<li>How old are you?<input type="number" name="amount" min="1" max="10"></li>-->
+      <br>
+      <button type="submit">Generate MadLibs!</button>
+    </center>
+    </ul>
+    </form>
+  </div>
+  <p id="homepagelink" style="position: fixed; bottom: 0; width:100%; text-align: center"> <A href = "./"> Back To Homepage </A> </p>
+</body>
+</html>
