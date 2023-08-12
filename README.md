@@ -1,2 +1,2 @@
 # web_dev
-All my website projects from Web Development Class.
+All my website projects created learning Web Development.
